@@ -1,8 +1,8 @@
 require("dotenv").config();
 let { PORT } = require("./const");
-//chalk used for color message version support  require chalk@4.1.2
+// chalk used for color message version support  require chalk@4.1.2
 const chalk = require("chalk");
-//import app module from app js
+// import app module from app js
 const app = require("./app");
 
 PORT = PORT || 5000;

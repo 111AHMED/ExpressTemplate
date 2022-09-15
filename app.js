@@ -3,10 +3,8 @@ let { NODE_ENV } = require("./const");
 const express = require("express");
 
 var app = express();
-// //fs create folder log if not existe
-// const fs = require("fs");
 
-//cors to allow pass data
+// cors to allow pass data
 const cors = require("cors");
 var corsOptions = {
   origin: "http://localhost:3000",
@@ -29,13 +27,13 @@ if (NODE_ENV !== "development") {
   const logger = require("./config/winston");
   app.use(logger.infoLogger);
 }
-//all routes here
+// all routes here
 app.use("/api/users", require("./routes/usersRoutes"));
 // testing route
 app.get("/", async (req, res) => {
   return res.json({ message: "Welcome ." });
 });
-//Router not define
+// Router not define
 app.use((req, res) => {
   let success = false;
   let statuss = 500;
